@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+
+MAIN BLOG 
+
+{% endblock %}
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/index2.css" %}" />
+{% endblock %}
+{% block content %}
+
+<section id="welcome">
+    <header>
+    <img src="{% static "blog/images/profile.jpg"%}"alt="Nada-The Autor of this blog"/>
+    <h2>Nada-Blog</h2>
+    </header>
+   <p>HI THIS NADA S FIRST DJANGO PROJECT</p> 
+</section>
+<section id ="latest-posts">
+    <h2>my latest thoughts</h2>
+    <ul>
+        {% for post in posts%}
+    {% include "blog/includes/post.html" %}
+    {% endfor %}
+  
+    </ul>
+</section>
+<section id="about">
+    <h1>THIS BLOG IS ABOUT ME</h1>
+    <p> MY GOAL IS TO KEEP GROWING AS A DEVALOPER AND THOSE ARE MY FIRST STEPS </p>
+    <p> THE ONLY THING I NEED IS MORE TIME TO PRACTICE NEW THINGS UNTIL I GINF WHAT I AM PATIENT ABOUT</p>
+</section>
+{% endblock %}
